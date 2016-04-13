@@ -1,0 +1,79 @@
+//mixins
+
+@mixin clearer {
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin shadow($color) {
+  -webkit-box-shadow: 3px 3px 10px $color;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 10px $color;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 10px $color;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+@mixin no-shadow() {
+  -webkit-box-shadow: none;
+  -moz-box-shadow:    none;
+  box-shadow:         none;
+}
+
+@mixin element-appears {
+  -ms-transform: translate(0);
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -o-transform: translate(0);
+  transform: translate(0);
+}
+
+@mixin element-hides-left {
+  -ms-transform: translateX(-110%);
+  -webkit-transform: translateX(-110%);
+  -moz-transform: translateX(-110%);
+  -o-transform: translateX(-110%);
+  transform: translateX(-110%);
+}
+
+@mixin element-hides-top {
+  -ms-transform: translateY(-110%);
+  -webkit-transform: translateY(-110%);
+  -moz-transform: translateY(-110%);
+  -o-transform: translateY(-110%);
+  transform: translateY(-110%);
+}
+
+@mixin element-moves-right($distance) {
+  -ms-transform: translateX($distance);
+  -webkit-transform: translateX($distance);
+  -moz-transform: translateX($distance);
+  -o-transform: translateX($distance);
+  transform: translateX($distance);
+}
+
+@mixin tranform-none {
+    -ms-transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+@mixin reset-transform-state {
+  -ms-transform: translate(0);
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -o-transform: translate(0);
+  transform: translate(0);
+}
+
+
+

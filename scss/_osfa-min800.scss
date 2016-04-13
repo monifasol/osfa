@@ -1,0 +1,50 @@
+
+@media all and (min-width: 800px){
+  main {
+    margin-top: 50px;
+  }
+  .menu-icon {
+    display: none;
+  }
+
+  .dropdown {
+    &.is-active {
+      .dropdown-content {
+        @include tranform-none;
+        margin-top: 10px;
+        text-align: left;
+        transition: all 1.3s 0s;
+      }  
+    }
+  }  
+
+  .menu {
+    visibility: visible;   
+    @include element-appears;
+    transition: all 0.5s 0s;
+    width: 100%;
+    height: 58px;
+
+    .element {
+      float: left;
+    }
+    .close-menu {
+      display: none;
+    }   
+  }
+
+
+  main {
+    .grid { 
+      .box { 
+        &.large {
+          width: 600px;
+        }
+      }
+    }
+  }
+}
+
+
+
+

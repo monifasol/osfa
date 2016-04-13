@@ -1,0 +1,253 @@
+/* ============================================================
+  Main
+============================================================ */
+body {
+  background-color: $main-bg;
+  color: $main-font-color;
+  font-family:  $main_font;
+  font-size: $main_font_size;
+  line-height: 1.5;
+}
+.content {
+  position: relative;
+  background-color: $main_bg;
+  padding: 30px 0;
+}
+
+/* ============================================================
+  HEADER
+============================================================ */
+header {
+  background-color: $top_bg;
+  width: 100%;
+  padding: 20px;
+  .headline {
+    font-family: $h1_font;
+    text-align: center;
+    font-size: $top_h1_font_size;
+    color: $top_h1_color;
+  }
+  .description {
+    color: $top_font_color;
+    font-size: $top_description_font_size;
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+  MENU
+============================================================ */
+.menu-icon {
+  background-image: $url_menu_icon;
+  width: 50px;
+  height: 44px;
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+.menu {
+  @include element-hides-left;
+  transition: all 0.8s 0s;
+  background-color: $menu_bg;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  
+  a {
+    text-decoration: none;
+    color: $menu_font_color;
+  }
+  .element {
+    border: 1px solid $menu_item_border_color;
+    background-color: $menu_bg_item;
+    @include border-radius(4px);
+    padding: 8px 10px;
+    color: $menu_font_color;
+    font-size: $menu_font_size;
+    cursor: pointer;
+    margin: 8px;
+    &:hover {
+      background-color: $menu_bg_item_hover;
+      color: $menu_item_hover_font_color;
+    }
+  }
+  .search {
+    padding: 5px;
+    margin: 8px;
+    width: 90%;
+  }
+  .close-menu {
+    background: $url_close_menu no-repeat 97% 75%;
+    width: 100%;
+    height: 40px;
+    visibility: hidden;
+    cursor: pointer;
+  }
+  &.is-active {
+    @include element-appears;
+    transition: all 0.5s 0s;
+    .close-menu {
+      visibility: visible;
+      transition: visibility 0.5s 0s;  
+    }
+  } 
+}
+
+.dropdown {
+  background: $url_open_icon no-repeat 100% 0%;
+  padding-right: 40px;
+  
+  .dropdown-content {
+    @include element-hides-left;
+    margin-left: 20px;
+    opacity: 0;
+    max-height: 0;
+    transition: all 1s 0s;
+  }  
+  &.is-active {
+      background: $url_close_icon no-repeat 100% 0%;  
+    .dropdown-content {
+      opacity: 1;
+      max-height: 10em;      
+      @include element-moves-right(40px);
+      transition: all 1s 0s;
+    }  
+  }
+}  
+
+/* ============================================================
+  GRID
+============================================================ */
+
+main {
+  h1 {
+    font-size: $font_size_h1;
+    font-family: $h1_font;
+    margin-bottom: 15px;
+  }
+  .grid { 
+    width: 95%;
+    margin: 35px auto 0;
+    .item {
+      padding-bottom: 30px;
+      border-bottom: solid 1px $separator_line_color;
+      margin-bottom: 30px;
+    }
+    .box { 
+      border: 1px solid $box_border_olor;
+      background: $box_bg_color;
+      margin: 0px;
+      padding: 5px 10px;
+      @include shadow($shadow_box_color);
+
+      &.small, &.medium, &.large {
+        width: 100%;
+      }
+    }
+    .form {
+      fieldset {
+        clear: both;
+        margin: 10px 0;
+      }
+      label, input {
+        float: none;
+      }
+      label {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 8px 20px;
+      }
+      input[type=submit] {
+        width: 100%;
+        border: 0px;
+      }
+    }
+    .btn {
+      @include border-radius(5px);
+      @include shadow(#cccccc);
+      font-family: Arial;
+      color: #ffffff;
+      font-size: 14px;
+      background: #3498db;
+      padding: 8px 20px;
+      text-decoration: none;
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 10px;
+      &.default {
+        width: 200px;
+      }
+      &.big {
+        width: 80%;
+      }
+    }
+
+    .btn:hover {
+      background: #3cb0fd;
+      text-decoration: none;
+    }
+
+    .pic-wrapper {
+      &.thumbnail {
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        .pic {
+          height: 100%;
+          margin-left: -20%; 
+        }
+      }
+      &.default {
+        .pic {
+          width: 100%;
+        }
+      }
+    }
+  }  
+}
+
+xmp{
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  color: #888;
+  margin-bottom: 10px;
+  padding-left: -100px;
+  width: 100%;
+  overflow: scroll;
+  border: solid 1px #ccc;
+  background-color: #eaeaea;
+}
+.wrapper-hidden-code {
+  .show-hide {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .hidden-code {
+    display: none;
+    &.is-visible {
+      display: block !important;
+    }
+  }
+}
+
+/* ============================================================
+  FOOTER
+============================================================ */
+footer {
+  background-color: $bg_footer;
+  color: $main_font_color_light;
+  clear: both;
+  padding: 30px;
+  font-size: $footer_font_size;
+  text-align: center;
+}

@@ -1,0 +1,51 @@
+
+@media all and (min-width: 500px){
+  
+
+  main {
+    .grid { 
+      width: 80%;
+      .box { 
+        margin: 15px;
+        padding: 15px;
+        &.small {
+          width: 200px;
+        }
+        &.medium {
+          width: 400px;
+        }
+      }
+      .form {
+        label, input {
+          float: left;
+        }
+        label {
+          width: 20%;
+          margin-right: 20px;
+        }
+        input, textarea {
+          width: 50%;
+        }
+        input[type=submit] {
+          margin-left: calc(20% + 20px);
+          width: 30%;
+        }
+      }
+      .pic-wrapper {
+        &.default {
+          .pic {
+            width: default;
+          }
+        }
+      }
+    }
+  }
+
+  .menu {
+    width: 50%;
+  }
+}
+
+
+
+
