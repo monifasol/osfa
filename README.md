@@ -1,4 +1,4 @@
-# OSFA
-========
+OSFA
+=======
 
 One style for all
